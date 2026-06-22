@@ -1,0 +1,43 @@
+formulas:
+  image: image(photo)
+  "": keyca
+  keycaps: |
+    keycaps.join(", ") 
+properties:
+  formula.keycaps:
+    displayName: keycaps
+views:
+  - type: cards
+    name: Keyboards
+    filters:
+      and:
+        - file.inFolder("10 - Personal/18 - Collections/Keyboards")
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - file.name
+      - rating
+      - status
+      - formula.keycaps
+      - switches
+    sort:
+      - property: file.mtime
+        direction: ASC
+    image: note.cover
+    imageFit: contain
+    imageAspectRatio: 0.9
+    cardSize: 280
+  - type: cards
+    name: Keycaps
+    filters:
+      and:
+        - file.inFolder("10 - Personal/18 - Collections/Keycaps")
+    order:
+      - file.name
+      - material
+      - profile
+      - mounted_on
+    image: note.cover
+    imageFit: contain
+    cardSize: 420
